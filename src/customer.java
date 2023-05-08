@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class customer extends user{
 
-    private int loyaltyPoints;
+    private int loyaltyPoints = 0;
 
     public customer(String name, String email, String password, String phone, String address) {
         super(name, email, password, phone, address);
