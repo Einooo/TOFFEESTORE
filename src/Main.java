@@ -16,8 +16,10 @@ public class Main {
             case 1:
                 cust.register();
                 break;
-
             case 2:
+                cust.login();
+                break;
+            case 3:
                 System.exit(0);
                 break;
             default:

@@ -18,7 +18,7 @@ public abstract class user {
 
     public abstract void register();
 
-    public abstract boolean login(String email, String password);
+    public abstract boolean login();
 
     public static boolean isValid(String email, String password) {
 
