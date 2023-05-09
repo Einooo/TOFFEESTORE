@@ -24,6 +24,10 @@ public class Item {
         this.quantity = quantity;
     }
 
+    public Item() {
+
+    }
+
     public String getName() {
         return name;
     }
@@ -58,6 +62,10 @@ public class Item {
 
     public int getQuantity() {
         return quantity;
+    }
+
+    public void setQuantity(int i) {
+        this.quantity = i;
     }
 }
 

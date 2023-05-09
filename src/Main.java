@@ -2,6 +2,10 @@ import java.util.Scanner;
 
 
 public class Main {
+    Carts cart = new Carts();
+    Catalog cat = new Catalog();
+
+    cat.loadItems();
 
     public void displayMenu() {
         System.out.println("Welcome to TOFFEE Store!");
@@ -12,10 +16,97 @@ public class Main {
     }
 
     public void displayMenu2() {
-        System.out.println("\n");
         System.out.println("1. View Catalog");
         System.out.println("2. View Cart");
         System.out.println("3. Search");
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your choice: ");
+        int choice = scanner.nextInt();
+
+
+        switch (choice) {
+            case 1:
+                cat.displayItems();
+                System.out.println("To Add Item To Cart, enter 1.");
+                System.out.println("To Return, enter 2.");
+                int choice2 = scanner.nextInt();
+                if (choice2 == 1) {
+                    System.out.print("Enter the item name: ");
+                    String name = scanner.next();
+                    System.out.print("Enter the quantity: ");
+                    int quantity = scanner.nextInt();
+                    cart.addToCart(name, quantity);
+                    System.out.println("Item added to cart.");
+                    displayMenu2();
+                } else if (choice2 == 2) {
+                    displayMenu2();
+                } else {
+                    System.out.println("Invalid choice.");
+                    displayMenu2();
+                }
+
+            case 2:
+                cart.displayCart();
+                System.out.println("To Remove Item From Cart, enter 1.");
+                System.out.println("To Clear Cart, enter 2.");
+                System.out.println("To Return, enter 3.");
+                int choice3 = scanner.nextInt();
+                if (choice3 == 1) {
+                    System.out.print("Enter the item name: ");
+                    String name = scanner.next();
+                    cart.removeFromCart(name);
+                    System.out.println("Item removed from cart.");
+                    displayMenu2();
+                } else if (choice3 == 2) {
+                    cart.clearCart();
+                    System.out.println("Cart cleared.");
+                    displayMenu2();
+                } else if (choice3 == 3) {
+                    displayMenu2();
+                } else {
+                    System.out.println("Invalid choice.");
+                    displayMenu2();
+                }
+
+            case 3:
+                System.out.print("Enter the item name: ");
+                String name = scanner.next();
+
+                if (cat.search(name)){
+                    System.out.println("To Add Item To Cart, enter 1.");
+                    System.out.println("To Return, enter 2.");
+                    int choice4 = scanner.nextInt();
+                    if (choice4 == 1) {
+                        System.out.print("Enter the quantity: ");
+                        int quantity = scanner.nextInt();
+                        cart.addToCart(name, quantity);
+                        System.out.println("Item added to cart.");
+                        displayMenu2();
+                    } else if (choice4 == 2) {
+                        displayMenu2();
+                    } else {
+                        System.out.println("Invalid choice.");
+                        displayMenu2();
+                    }
+                } else {
+                    System.out.println("Item not found.");
+                    System.out.println("To Return, enter 2.");
+                    int choice5 = scanner.nextInt();
+                    if (choice5 == 2) {
+                        displayMenu2();
+                    } else {
+                        System.out.println("Invalid choice.");
+                        displayMenu2();
+                    }
+                };
+
+                break;
+            default:
+                System.out.println("Invalid choice.");
+                displayMenu2();
+        }
     }
 
     public void nonCustomerMenu() {
@@ -87,11 +178,11 @@ public class Main {
         switch (choice) {
             case 1:
                 cust.register();
+                displayMenu2();
                 break;
             case 2:
                 cust.login();
-                Catalog cat = new Catalog();
-                cat.displayItems();
+                displayMenu2();
                 break;
             case 3:
                 main.nonCustomerMenu();
@@ -109,3 +200,4 @@ public class Main {
         main.mainMenu();
     }
 }
+
