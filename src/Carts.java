@@ -2,11 +2,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Carts {
-    Catalog cat = new Catalog();
+    Catalog cat =null;
     private List<Item> items;
 
-    public Carts() {
+    public Carts(Catalog cata){
         items = new ArrayList<>();
+        cat = cata;
+
     }
 
     public void addToCart(String name, int quantity) {

@@ -18,6 +18,7 @@ public class Catalog {
 
 
     public void displayItems() {
+
         System.out.println("Catalog:");
         System.out.println("--------------------------------------------------");
         System.out.printf("%-20s%-15s%-15s\n", "Name", "Price", "Quantity");
@@ -47,6 +48,7 @@ public class Catalog {
 
 
     public Item getItem(String name) {
+
         for (Item item : items) {
             if (item.getName().equals(name)) {
                 return item;
