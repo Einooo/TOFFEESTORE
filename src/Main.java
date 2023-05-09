@@ -3,9 +3,9 @@ import java.util.Scanner;
 
 public class Main {
     Carts cart = new Carts();
-    Catalog cat = new Catalog();
 
-    cat.loadItems();
+
+
 
     public void displayMenu() {
         System.out.println("Welcome to TOFFEE Store!");
@@ -25,7 +25,7 @@ public class Main {
         System.out.print("Enter your choice: ");
         int choice = scanner.nextInt();
 
-
+        Catalog cat = new Catalog();
         switch (choice) {
             case 1:
                 cat.displayItems();
@@ -73,7 +73,6 @@ public class Main {
             case 3:
                 System.out.print("Enter the item name: ");
                 String name = scanner.next();
-
                 if (cat.search(name)){
                     System.out.println("To Add Item To Cart, enter 1.");
                     System.out.println("To Return, enter 2.");
@@ -178,11 +177,11 @@ public class Main {
         switch (choice) {
             case 1:
                 cust.register();
-                displayMenu2();
+                main.displayMenu2();
                 break;
             case 2:
                 cust.login();
-                displayMenu2();
+                main.displayMenu2();
                 break;
             case 3:
                 main.nonCustomerMenu();

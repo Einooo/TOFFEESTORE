@@ -10,7 +10,7 @@ public class Item {
     private double price;
     private double weight;
     private double discountPercentage;
-    private int quantity;
+    private int quantity = 100;
 
     public Item(String name, String id, Category category, String description, String brand, double price, double weight, double discountPercentage, int quantity) {
         this.name = name;

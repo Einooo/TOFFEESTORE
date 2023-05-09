@@ -10,14 +10,17 @@ public class Carts {
     }
 
     public void addToCart(String name, int quantity) {
-        if (cat.search(name)) {
-            Item item = cat.getItem(name);
-            item.setQuantity(quantity);
-            items.add(item);
-            //change the quantity of the item in the catalog
-            cat.getItem(name).setQuantity(cat.getItem(name).getQuantity() - quantity);
-        } else {
-            System.out.println("Item not found.");
+        for (Item item : cat.getItems()) {
+            if (item.getName().equals(name)) {
+                items.add(new Item(item.getName(), item.getId(), item.getCategory(), item.getDescription(), item.getBrand(), item.getPrice(), item.getWeight(), item.getDiscountPercentage(), quantity));
+                break;
+            }
+        }
+        for (Item item : cat.getItems()) {
+            if (item.getName().equals(name)) {
+                item.setQuantity(item.getQuantity() - quantity);
+                break;
+            }
         }
     }
 
