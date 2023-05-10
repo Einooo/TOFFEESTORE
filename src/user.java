@@ -2,38 +2,69 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 public abstract class user {
-    private String name;
-    private String email;
-    private String password;
-    private String phone;
-    private String address;
+    protected String name;
+    protected String email;
+    protected String password;
+    protected String phone;
+    protected String address;
+    protected Role role;
 
-    public user(String name, String email, String password, String phone, String address) {
+    public user(String name, String email, String password, String phone, String address, Role role) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.phone = phone;
         this.address = address;
+        this.role = role;
     }
 
-    public abstract void register();
-
-    public abstract boolean login();
-
-    public static boolean isValid(String email, String password) {
-
-        String emailRegex = "^[A-Za-z0-9]+@[A-Za-z0-9.-]+$";
-        String passwordRegex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>.]).{8,20}";
-
-        Pattern emailPattern = Pattern.compile(emailRegex);
-        Matcher emailMatcher = emailPattern.matcher(email);
-
-        Pattern passwordPattern = Pattern.compile(passwordRegex);
-        Matcher passwordMatcher = passwordPattern.matcher(password);
-
-        return emailMatcher.matches() && passwordMatcher.matches();
+    public String getName() {
+        return name;
     }
 
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 }
 
 

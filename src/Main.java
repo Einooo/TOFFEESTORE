@@ -5,7 +5,7 @@ public class Main {
     Catalog cat = new Catalog();
     Carts cart = new Carts(cat);
 
-
+    user user_ = null;
     public void displayMenu() {
         System.out.println("Welcome to TOFFEE Store!");
         System.out.println("1. Register");
@@ -173,15 +173,24 @@ public class Main {
 
         System.out.print("Enter your choice: ");
         int choice = scanner.nextInt();
-        customer cust = new customer("name", "email", "password", "phone", "address");
+        Authencation auth = new Authencation();
         switch (choice) {
             case 1:
-                cust.register();
-                displayMenu2();
+                if (auth.Register()) {
+                    System.out.println("Registration successful.");
+                    main.displayMenu2();
+                } else {
+                    System.out.println("Registration failed.");
+                    main.mainMenu();
+                }
                 break;
             case 2:
-                cust.login();
-                displayMenu2();
+                if (auth.Login()) {
+                    main.displayMenu2();
+                } else {
+                    System.out.println("Login failed.");
+                    main.mainMenu();
+                }
                 break;
             case 3:
                 main.nonCustomerMenu();
@@ -195,8 +204,10 @@ public class Main {
         }
     }
     public static void main(String[] args) {
-        Main main = new Main();
-        main.mainMenu();
+
+
+//        Main main = new Main();
+//        main.mainMenu();
     }
 }
 
