@@ -5,6 +5,7 @@ public class sysControler {
     Carts cart = new Carts(cat);
     Orders order = new Orders();
     customer cust = new customer("name", "email", "password", "phone", "address", Role.CUSTOMER);
+    payment pay = new payment();
 
 
     public void displayMenu() {
@@ -68,11 +69,25 @@ public class sysControler {
                 } else if (choice3 == 3) {
                     displayMenu2();
                 }
-                else if(choice3 ==4){
+                else if(choice3 ==4) {
+                    Boolean check = true;
                     order.setCustomerName(cust.getName());
                     System.out.print("Enter your address: ");
                     String address = scanner.next();
                     order.setOrderAddress(address);
+                    while (check) {
+                        System.out.println("1: cash on delivery");
+                        System.out.println("2: e-wallet");
+                        System.out.print("Select your payment method:");
+                        int paychoice = scanner.nextInt();
+                        pay.setPaymentMethod(paychoice);
+                        if (paychoice == 1) {
+                            pay.processPayment(pay.getPaymentMethod());
+                            check=false;
+                        }
+                        else
+                            pay.processPayment(pay.getPaymentMethod());
+                    }
                     order.display_bill();
                     displayMenu2();
                 }

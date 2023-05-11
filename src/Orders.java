@@ -19,9 +19,10 @@ public class Orders {
 
     public void display_bill(){
 
-        System.out.println("your name is "+getCustomerName());
-        System.out.println("your order address is "+getOrderAddress());
         System.out.println("your bill:");
+        System.out.println("--------------------------------------------------");
+        System.out.println("Name is "+getCustomerName());
+        System.out.println("Order address is "+getOrderAddress());
         System.out.println("--------------------------------------------------");
         System.out.printf("%-20s%-15s%-15s\n", "Name", "Price", "Quantity");
         System.out.println("--------------------------------------------------");

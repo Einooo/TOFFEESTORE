@@ -127,7 +127,7 @@ public class Authencation {
             // Command to run the Python script
             String command = "python";
             // Path to the Python script
-            String scriptPath = "C:\\Users\\muhan\\IdeaProjects\\TOFFEESTORE\\src\\otpscript.py";
+            String scriptPath = "D:\\Java projects\\TOFFEESTORE\\src\\otpscript.py";
             // Recipient's email
             String senderEmail = "muhannadeion1@gmail.com";
             String sender_password = "hbdlfemvukkbhyri";
