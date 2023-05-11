@@ -74,24 +74,9 @@ public class Carts {
         }
         return totalWeight;
     }
-
-//    public void checkout() {
-//        System.out.println("Items in Cart:");
-//        System.out.println("----------------------------------");
-//        System.out.printf("%-20s%-15s%-15s%-15s\n", "Name", "Quantity", "Price", "Weight");
-//        System.out.println("----------------------------------");
-//        for (Item item : items) {
-//            System.out.printf("%-20s%-15s%-15s%-15s\n", item.getName(), item.getQuantity(), item.getPrice(), item.getWeight());
-//        }
-//        System.out.println("----------------------------------");
-//        System.out.printf("%-20s%-15s\n", "Total Price->", getTotalPrice());
-//        System.out.printf("%-20s%-15s\n", "Total Weight->", getTotalWeight());
-//        System.out.println("----------------------------------");
-//        clearCart();
-//    }
-public static List<Item> getorderItems() {
-    return items;
-}
+    public static List<Item> getorderItems() {
+        return items;
+    }
 
 
 

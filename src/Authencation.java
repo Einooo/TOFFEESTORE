@@ -25,9 +25,8 @@ public class Authencation {// here login an register for users
         }
         return true;
     }
-
-
-    public Boolean Login() {
+    public Boolean Login(customer person) {
+        person = new customer("name", "email", "password", "phone", "address", Role.CUSTOMER);
         System.out.println("Login Form");
         Scanner Scanner = new Scanner(System.in);
         System.out.print("Enter your email address: ");
@@ -41,10 +40,17 @@ public class Authencation {// here login an register for users
                 String[] data = line.split(",");
                 if (data[1].equals(userEmail) && data[2].equals(userPassword)) {
                     System.out.println("Login successful!");
+                    System.out.println("Welcome " + data[0] + "!");
+                    person.setName(data[0]);
+                    person.setEmail(data[1]);
+                    person.setPassword(data[2]);
+                    person.setPhone(data[3]);
+                    person.setAddress(data[4]);
                     return true;
                 }
             }
             System.out.println("User not found.");
+            person= null;
             return false;
         } catch (IOException e) {
             System.out.println("Error reading from CSV file.");

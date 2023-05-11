@@ -1,12 +1,15 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.List;
 
 public class Orders {
     private int orderId;// skeleton not used for now
     private String customerName;
     private String orderAddress;
-
     private List<Item> orderItems;
     private double orderTotal;
+
 
     public Orders() {
        customerName="";
@@ -15,6 +18,7 @@ public class Orders {
     }
 
     public void display_bill(){
+
         System.out.println("your name is "+getCustomerName());
         System.out.println("your order address is "+getOrderAddress());
         System.out.printf("your bill:");
@@ -27,8 +31,6 @@ public class Orders {
         System.out.println("--------------------------------------------------");
         System.out.println("Total Price->" + Carts.getTotalPrice());
     }
-    // Getters and setters for all properties
-
     public int getOrderId() {
         return orderId;
     }// skeleton not used for now
