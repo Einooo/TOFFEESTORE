@@ -5,7 +5,7 @@ public class Main {
     Catalog cat = new Catalog();
     Carts cart = new Carts(cat);
 
-    user user_ = null;
+
     public void displayMenu() {
         System.out.println("Welcome to TOFFEE Store!");
         System.out.println("1. Register");
@@ -64,7 +64,8 @@ public class Main {
                     displayMenu2();
                 } else if (choice3 == 3) {
                     displayMenu2();
-                } else {
+                }
+                else {
                     System.out.println("Invalid choice.");
                     displayMenu2();
                 }
@@ -118,7 +119,6 @@ public class Main {
         System.out.print("Enter your choice: ");
         int choice = scanner.nextInt();
 
-        Catalog cat = new Catalog();
         switch (choice) {
             case 1:
                 cat.displayItems();
@@ -168,8 +168,8 @@ public class Main {
 
     public void mainMenu(){
         Scanner scanner = new Scanner(System.in);
-        Main main = new Main();
-        main.displayMenu();
+
+        displayMenu();
 
         System.out.print("Enter your choice: ");
         int choice = scanner.nextInt();
@@ -178,22 +178,22 @@ public class Main {
             case 1:
                 if (auth.Register()) {
                     System.out.println("Registration successful.");
-                    main.displayMenu2();
+                    displayMenu2();
                 } else {
                     System.out.println("Registration failed.");
-                    main.mainMenu();
+                    mainMenu();
                 }
                 break;
             case 2:
-                if (auth.Login()) {
-                    main.displayMenu2();
-                } else {
-                    System.out.println("Login failed.");
-                    main.mainMenu();
-                }
+//                if (auth.Login()) {
+                    displayMenu2();
+//                } else {
+//                    System.out.println("Login failed.");
+//                    mainMenu();
+//                }
                 break;
             case 3:
-                main.nonCustomerMenu();
+                nonCustomerMenu();
                 break;
             case 4:
                 System.out.println("Thank you for visiting TOFFEE Store!");
@@ -204,10 +204,8 @@ public class Main {
         }
     }
     public static void main(String[] args) {
-
-
-//        Main main = new Main();
-//        main.mainMenu();
+        Main main = new Main();
+        main.mainMenu();
     }
 }
 

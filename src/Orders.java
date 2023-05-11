@@ -1,39 +1,39 @@
 import java.util.List;
 
 public class Orders {
-    private int orderId;
+    private int orderId;// skeleton not used for now
     private String customerName;
     private String orderAddress;
 
     private List<Item> orderItems;
     private double orderTotal;
 
-    public Orders(int orderId, String customerName, String orderAddress, List<Item> orderItems) {
-        this.orderId = orderId;
+    public Orders( String customerName, String orderAddress) {
         this.customerName = customerName;
         this.orderAddress = orderAddress;
         this.orderItems = Carts.getcartItems();
-        this.orderTotal = calculateOrderTotal();
     }
 
-    private double calculateOrderTotal() {
-        double total = 0.0;
+    public void display_bill(){
+        System.out.printf("%-20s%Toffee Store:");
+        System.out.println("--------------------------------------------------");
+        System.out.printf("%-20s%-15s%-15s\n", "Name", "Price", "Quantity");
+        System.out.println("--------------------------------------------------");
         for (Item item : orderItems) {
-            total += item.getPrice() * item.getQuantity();
+            System.out.printf("%-20s%-15s%-15s\n", item.getName(), item.getPrice(), item.getQuantity());
         }
-        return total;
+        System.out.println("--------------------------------------------------");
     }
-
     // Getters and setters for all properties
 
     public int getOrderId() {
         return orderId;
-    }
+    }// skeleton not used for now
 
 
     public void setOrderId(int orderId) {
         this.orderId = orderId;
-    }
+    } // skeleton not used for now
 
     public String getCustomerName() {
         return customerName;
@@ -43,7 +43,7 @@ public class Orders {
         this.customerName = customerName;
     }
 
-public String getOrderAddress() {
+    public String getOrderAddress() {
         return orderAddress;
     }
     public void setOrderAddress(String orderAddress) {

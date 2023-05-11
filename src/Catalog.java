@@ -28,10 +28,18 @@ public class Catalog {
         System.out.println("--------------------------------------------------");
     }
 
+    public boolean getItem(String name) {
+        for (Item item : items) {
+            if (item.getName().equals(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public Boolean search(String name) {
         for (Item item : items) {
-            if (item.getName().equals(name)) { // print "Name", "Description", "Brand", "Price", "Category","Weight", "Quantity");
+            if (getItem(name)) {
                 System.out.println("Name: " + item.getName());
                 System.out.println("Description: " + item.getDescription());
                 System.out.println("Brand: " + item.getBrand());
@@ -43,17 +51,6 @@ public class Catalog {
             }
         }
         return false;
-    }
-
-
-    public Item getItem(String name) {
-
-        for (Item item : items) {
-            if (item.getName().equals(name)) {
-                return item;
-            }
-        }
-        return null;
     }
 
     public Item[] getItems() {
