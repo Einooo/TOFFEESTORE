@@ -4,13 +4,10 @@ from email.mime.multipart import MIMEMultipart
 import random
 import sys
 
-def send_otp_email(sender_email, sender_password, recipient_email):
-    # Generate a random 6-digit OTP
-    otp = str(random.randint(100000, 999999))
-
+def send_otp_email(sender_email, sender_password, recipient_email,Otp):
     # Email details
     subject = 'OTP Verification'
-    message = f'Your OTP is: {otp}'
+    message = f'Welcome to Toffee store\nYour OTP is: {Otp}'
 
     # Create the email message
     msg = MIMEMultipart()
@@ -31,11 +28,12 @@ def send_otp_email(sender_email, sender_password, recipient_email):
         print('An error occurred while sending the OTP:', str(e))
 
 if __name__ == '__main__':
-    if len(sys.argv) < 4:
-        print("Usage: python send_email.py sender_email sender_password recipient_email")
+    if len(sys.argv) < 5:
+        print("Usage: python send_email.py sender_email sender_password recipient_email otp")
     else:
         sender_email = sys.argv[1]
         sender_password = sys.argv[2]
         recipient_email = sys.argv[3]
+        otp = sys.argv[4]
 
-        send_otp_email(sender_email, sender_password, recipient_email)
+        send_otp_email(sender_email, sender_password, recipient_email,otp)

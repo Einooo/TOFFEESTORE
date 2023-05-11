@@ -19,6 +19,7 @@ public class sysControler {
         System.out.println("1. View Catalog");
         System.out.println("2. View Cart");
         System.out.println("3. Search");
+        System.out.println("4. Logout");
 
         Scanner scanner = new Scanner(System.in);
 
@@ -46,7 +47,6 @@ public class sysControler {
                     System.out.println("Invalid choice.");
                     displayMenu2();
                 }
-
             case 2:
                 cart.displayCart();
                 System.out.println("To Remove Item From Cart, enter 1.");
@@ -70,11 +70,11 @@ public class sysControler {
                 }
                 else if(choice3 ==4){
                     order.setCustomerName(cust.getName());
-                    System.out.println("Enter your address: ");
+                    System.out.print("Enter your address: ");
                     String address = scanner.next();
                     order.setOrderAddress(address);
                     order.display_bill();
-                    break;
+                    displayMenu2();
                 }
                 else {
                     System.out.println("Invalid choice.");
@@ -111,12 +111,15 @@ public class sysControler {
                         System.out.println("Invalid choice.");
                         displayMenu2();
                     }
-                };
-
+                }
+                break;
+            case 4:
+                mainMenu();
                 break;
             default:
                 System.out.println("Invalid choice.");
                 displayMenu2();
+
         }
     }
 
@@ -179,9 +182,7 @@ public class sysControler {
 
     public void mainMenu(){
         Scanner scanner = new Scanner(System.in);
-
         displayMenu();
-
         System.out.print("Enter your choice: ");
         int choice = scanner.nextInt();
         Authencation auth = new Authencation();
@@ -189,6 +190,8 @@ public class sysControler {
             case 1:
                 if (auth.Register()) {
                     System.out.println("Registration successful.");
+                    System.out.println("Login to continue.");
+                    auth.Login(cust);
                     displayMenu2();
                 } else {
                     System.out.println("Registration failed.");
@@ -208,6 +211,7 @@ public class sysControler {
                 break;
             case 4:
                 System.out.println("Thank you for visiting TOFFEE Store!");
+                System.exit(0);
                 break;
             default:
                 System.out.println("Invalid choice.");

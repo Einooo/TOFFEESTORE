@@ -21,7 +21,7 @@ public class Orders {
 
         System.out.println("your name is "+getCustomerName());
         System.out.println("your order address is "+getOrderAddress());
-        System.out.printf("your bill:");
+        System.out.println("your bill:");
         System.out.println("--------------------------------------------------");
         System.out.printf("%-20s%-15s%-15s\n", "Name", "Price", "Quantity");
         System.out.println("--------------------------------------------------");
@@ -30,6 +30,8 @@ public class Orders {
         }
         System.out.println("--------------------------------------------------");
         System.out.println("Total Price->" + Carts.getTotalPrice());
+        System.out.println("--------------------------------------------------");
+        System.out.println("Thank you for shopping with us!");
     }
     public int getOrderId() {
         return orderId;
@@ -56,19 +58,19 @@ public class Orders {
     }
 
 
-    public List<Item> getOrderItems() {
-        return orderItems;
-    }
-
-    public void setOrderItems(List<Item> orderItems) {
-        this.orderItems = orderItems;
-    }
-
-    public double getOrderTotal() {
-        return orderTotal;
-    }
-
-    public void setOrderTotal(double orderTotal) {
-        this.orderTotal = orderTotal;
-    }
+//    public List<Item> getOrderItems() {
+//        return orderItems;
+//    }
+//
+//    public void setOrderItems(List<Item> orderItems) {
+//        this.orderItems = orderItems;
+//    }
+//
+//    public double getOrderTotal() {
+//        return orderTotal;
+//    }
+//
+//    public void setOrderTotal(double orderTotal) {
+//        this.orderTotal = orderTotal;
+//    }
 }
