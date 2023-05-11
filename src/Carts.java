@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Carts {
     Catalog cat =null;
-    private List<Item> items;
+    private static List<Item> items;
 
     public Carts(Catalog cata){
         items = new ArrayList<>();
@@ -60,5 +60,9 @@ public class Carts {
             totalWeight += item.getWeight() * item.getQuantity();
         }
         return totalWeight;
+    }
+
+    public static List<Item> getcartItems() {
+        return items;
     }
 }

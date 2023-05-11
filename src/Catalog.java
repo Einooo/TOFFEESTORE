@@ -13,7 +13,6 @@ public class Catalog {
         //candy
         items.add(new Item("mango_bite", "5", Category.CANDY, "Mango", "Parle", 17, 10, 0, 100));
         items.add(new Item("coffee_bite", "6", Category.CANDY, "Coffee", "Parle", 16, 10, 0, 100));
-
     }
 
 
@@ -32,7 +31,7 @@ public class Catalog {
 
     public Boolean search(String name) {
         for (Item item : items) {
-            if (item.getName().equals(name)) {// print "Name", "Description", "Brand", "Price", "Category","Weight", "Quantity");
+            if (item.getName().equals(name)) { // print "Name", "Description", "Brand", "Price", "Category","Weight", "Quantity");
                 System.out.println("Name: " + item.getName());
                 System.out.println("Description: " + item.getDescription());
                 System.out.println("Brand: " + item.getBrand());
