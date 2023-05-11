@@ -8,14 +8,16 @@ public class Orders {
     private List<Item> orderItems;
     private double orderTotal;
 
-    public Orders( String customerName, String orderAddress) {
-        this.customerName = customerName;
-        this.orderAddress = orderAddress;
-        this.orderItems = Carts.getcartItems();
+    public Orders() {
+       customerName="";
+       orderAddress="";
+       orderItems = Carts.getorderItems();
     }
 
     public void display_bill(){
-        System.out.printf("%-20s%Toffee Store:");
+        System.out.println("your name is "+getCustomerName());
+        System.out.println("your order address is "+getOrderAddress());
+        System.out.printf("your bill:");
         System.out.println("--------------------------------------------------");
         System.out.printf("%-20s%-15s%-15s\n", "Name", "Price", "Quantity");
         System.out.println("--------------------------------------------------");
@@ -23,6 +25,7 @@ public class Orders {
             System.out.printf("%-20s%-15s%-15s\n", item.getName(), item.getPrice(), item.getQuantity());
         }
         System.out.println("--------------------------------------------------");
+        System.out.println("Total Price->" + Carts.getTotalPrice());
     }
     // Getters and setters for all properties
 

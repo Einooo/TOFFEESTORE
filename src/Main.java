@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Main {
     Catalog cat = new Catalog();
     Carts cart = new Carts(cat);
+    Orders order = new Orders();
 
 
     public void displayMenu() {
@@ -51,6 +52,8 @@ public class Main {
                 System.out.println("To Remove Item From Cart, enter 1.");
                 System.out.println("To Clear Cart, enter 2.");
                 System.out.println("To Return, enter 3.");
+                System.out.println("To place order, enter 4.");
+
                 int choice3 = scanner.nextInt();
                 if (choice3 == 1) {
                     System.out.print("Enter the item name: ");
@@ -64,6 +67,16 @@ public class Main {
                     displayMenu2();
                 } else if (choice3 == 3) {
                     displayMenu2();
+                }
+                else if(choice3 ==4){
+                    System.out.println("Enter your name: ");
+                    String name = scanner.next();
+                    order.setCustomerName(name);
+                    System.out.println("Enter your address: ");
+                    String address = scanner.next();
+                    order.setOrderAddress(address);
+                    order.display_bill();
+                    break;
                 }
                 else {
                     System.out.println("Invalid choice.");

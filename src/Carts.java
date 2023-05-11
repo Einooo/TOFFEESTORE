@@ -59,7 +59,7 @@ public class Carts {
         items.clear();
     }
 
-    public double getTotalPrice() {
+    public static double getTotalPrice() {
         double totalPrice = 0;
         for (Item item : items) {
             totalPrice += item.getPrice() * item.getQuantity();
@@ -89,10 +89,10 @@ public class Carts {
 //        System.out.println("----------------------------------");
 //        clearCart();
 //    }
+public static List<Item> getorderItems() {
+    return items;
+}
 
-    public void place_order(){
-        System.out.println();
-    }
 
 
 
