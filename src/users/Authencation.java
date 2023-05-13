@@ -5,9 +5,22 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * The type Authencation.
+ */
 public class Authencation {
 
+    /**
+     * The Otp.
+     */
     public String otp = generatOtp();
+
+    /**
+     * Is valid mail boolean.
+     *
+     * @param email the email
+     * @return the boolean
+     */
     public static boolean isValidMail(String email) {
 
         String emailRegex = "^[A-Za-z0-9]+@[A-Za-z0-9.-]+.com$";
@@ -22,6 +35,12 @@ public class Authencation {
         return true;
     }
 
+    /**
+     * Is valid pass boolean.
+     *
+     * @param password the password
+     * @return the boolean
+     */
     public static boolean isValidPass(String password) {
 
         String passwordRegex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>.]).{8,20}";
@@ -34,6 +53,13 @@ public class Authencation {
         }
         return true;
     }
+
+    /**
+     * Login boolean.
+     *
+     * @param p the p
+     * @return the boolean
+     */
     public Boolean Login(customer p) {
         System.out.println("Login Form");
         Scanner Scanner = new Scanner(System.in);
@@ -65,6 +91,12 @@ public class Authencation {
         }
         return true;
     }
+
+    /**
+     * Register boolean.
+     *
+     * @return the boolean
+     */
     public Boolean Register() {
         System.out.println("Registration Form");
         Scanner Scanner = new Scanner(System.in);
@@ -124,6 +156,11 @@ public class Authencation {
         }
     }
 
+    /**
+     * Send otp.
+     *
+     * @param email the email
+     */
     public void sendOtp(String email) {
         try {
             // Command to run the Python script
@@ -151,6 +188,11 @@ public class Authencation {
         }
     }
 
+    /**
+     * Generat otp string.
+     *
+     * @return the string
+     */
     public String generatOtp(){
         int otp = (int)(Math.random()*9000)+1000;
         return Integer.toString(otp);

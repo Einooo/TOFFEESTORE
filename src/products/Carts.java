@@ -3,16 +3,37 @@ import orders.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Carts.
+ */
 public class Carts {
+    /**
+     * The Cat.
+     */
     Catalog cat =null;
     private static List<Item> items;
 
+    /**
+     * The Order.
+     */
     Orders order = new Orders();
+
+    /**
+     * Instantiates a new Carts.
+     *
+     * @param cata the cata
+     */
     public Carts(Catalog cata){
         this.cat = cata;
         items = new ArrayList<>();
     }
 
+    /**
+     * Add to cart.
+     *
+     * @param name     the name
+     * @param quantity the quantity
+     */
     public void addToCart(String name, int quantity) {
         for (Item item : cat.getItems()) {
             if (item.getName().equals(name)) {
@@ -27,6 +48,9 @@ public class Carts {
         }
     }
 
+    /**
+     * Display cart.
+     */
     public void displayCart() {
         System.out.println("Items in Cart:");
         System.out.println("----------------------------------");
@@ -40,6 +64,11 @@ public class Carts {
         System.out.println("----------------------------------");
     }
 
+    /**
+     * Remove from cart.
+     *
+     * @param name the name
+     */
     public void removeFromCart(String name) {// remove from cart as a button beside the item
         for (Item item : items) {
             if (item.getName().equals(name)) {
@@ -57,10 +86,18 @@ public class Carts {
         System.out.println("Item removed from cart");
     }
 
+    /**
+     * Clear cart.
+     */
     public void clearCart() {
         items.clear();
     }
 
+    /**
+     * Gets total price.
+     *
+     * @return the total price
+     */
     public static double getTotalPrice() {
         double totalPrice = 0;
         for (Item item : items) {
@@ -69,6 +106,11 @@ public class Carts {
         return totalPrice;
     }
 
+    /**
+     * Gets total weight.
+     *
+     * @return the total weight
+     */
     public double getTotalWeight() {
         double totalWeight = 0;
         for (Item item : items) {
@@ -76,10 +118,21 @@ public class Carts {
         }
         return totalWeight;
     }
+
+    /**
+     * Gets items.
+     *
+     * @return the items
+     */
     public static List<Item> getorderItems() {
         return items;
     }
 
+    /**
+     * Gets total quantity.
+     *
+     * @return the total quantity
+     */
     public static int getTotalQuantity() {
         int totalQuantity = 0;
         for (Item item : items) {

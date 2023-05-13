@@ -4,9 +4,15 @@ package products;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Catalog.
+ */
 public class Catalog {
     private List<Item> items;
 
+    /**
+     * Instantiates a new Catalog.
+     */
     public Catalog() {
         items = new ArrayList<>();
         items.add(new Item("dairy_milk", "1", Category.CHOCOLATE, "Milk chocolate", "Cadbury", 20, 50, 0, 100));
@@ -19,6 +25,9 @@ public class Catalog {
     }
 
 
+    /**
+     * Display items.
+     */
     public void displayItems() {
 
         System.out.println("Catalog:");
@@ -31,6 +40,12 @@ public class Catalog {
         System.out.println("--------------------------------------------------");
     }
 
+    /**
+     * Gets item.
+     *
+     * @param name the name
+     * @return the item
+     */
     public boolean getItem(String name) {
         for (Item item : items) {
             if (item.getName().equals(name)) {
@@ -40,6 +55,12 @@ public class Catalog {
         return false;
     }
 
+    /**
+     * Search boolean.
+     *
+     * @param name the name
+     * @return the boolean
+     */
     public Boolean search(String name) {
         for (Item item : items) {
             if (getItem(name)) {
@@ -56,6 +77,11 @@ public class Catalog {
         return false;
     }
 
+    /**
+     * Get items item [ ].
+     *
+     * @return the item [ ]
+     */
     public Item[] getItems() {
         return items.toArray(new Item[items.size()]);
     }

@@ -5,14 +5,35 @@ import users.*;
 
 import java.util.Scanner;
 
+/**
+ * The type Sys controler.
+ */
 public class sysControler {
+    /**
+     * The Cat.
+     */
     Catalog cat = new Catalog();
+    /**
+     * The Cart.
+     */
     Carts cart = new Carts(cat);
+    /**
+     * The Order.
+     */
     Orders order = new Orders();
+    /**
+     * The Cust.
+     */
     customer cust = new customer("name", "email", "password", "phone", "address", Role.CUSTOMER);
+    /**
+     * The Pay.
+     */
     payment pay = new payment();
 
 
+    /**
+     * Display menu.
+     */
     public void displayMenu() {
         System.out.println("Welcome to TOFFEE Store!");
         System.out.println("1. Register");
@@ -21,6 +42,9 @@ public class sysControler {
         System.out.println("4. Exit");
     }
 
+    /**
+     * Display menu 2.
+     */
     public void displayMenu2() {
         System.out.println("1. View Catalog");
         System.out.println("2. View Cart");
@@ -140,6 +164,9 @@ public class sysControler {
         }
     }
 
+    /**
+     * Non customer menu.
+     */
     public void nonCustomerMenu() {
         System.out.println("1. View Catalog");
         System.out.println("2. Search");
@@ -197,6 +224,9 @@ public class sysControler {
 
     }
 
+    /**
+     * Main menu.
+     */
     public void mainMenu() {
         Scanner scanner = new Scanner(System.in);
         displayMenu();
