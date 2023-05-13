@@ -68,8 +68,7 @@ public class sysControler {
                     displayMenu2();
                 } else if (choice3 == 3) {
                     displayMenu2();
-                }
-                else if(choice3 ==4) {
+                } else if (choice3 == 4) {
                     Boolean check = true;
                     order.setCustomerName(cust.getName());
                     System.out.print("Enter your address: ");
@@ -83,15 +82,13 @@ public class sysControler {
                         pay.setPaymentMethod(paychoice);
                         if (paychoice == 1) {
                             pay.processPayment(pay.getPaymentMethod());
-                            check=false;
-                        }
-                        else
+                            check = false;
+                        } else
                             pay.processPayment(pay.getPaymentMethod());
                     }
                     order.display_bill();
                     displayMenu2();
-                }
-                else {
+                } else {
                     System.out.println("Invalid choice.");
                     displayMenu2();
                 }
@@ -100,7 +97,7 @@ public class sysControler {
                 System.out.print("Enter the item name: ");
                 String name = scanner.next();
 
-                if (cat.search(name)){
+                if (cat.search(name)) {
                     System.out.println("To Add Item To Cart, enter 1.");
                     System.out.println("To Return, enter 2.");
                     int choice4 = scanner.nextInt();
@@ -163,13 +160,12 @@ public class sysControler {
             case 2:
                 System.out.print("Enter the item name: ");
                 String name = scanner.next();
-                if (cat.search(name)){
+                if (cat.search(name)) {
                     System.out.println("To Return, enter 3.");
                     int choice3 = scanner.nextInt();
                     if (choice3 == 3) {
                         nonCustomerMenu();
-                    }
-                    else {
+                    } else {
                         System.out.println("Invalid choice.");
                         nonCustomerMenu();
                     }
@@ -183,7 +179,8 @@ public class sysControler {
                         System.out.println("Invalid choice.");
                         nonCustomerMenu();
                     }
-                };
+                }
+                ;
                 break;
             case 3:
                 mainMenu();
@@ -195,7 +192,7 @@ public class sysControler {
 
     }
 
-    public void mainMenu(){
+    public void mainMenu() {
         Scanner scanner = new Scanner(System.in);
         displayMenu();
         System.out.print("Enter your choice: ");
@@ -234,3 +231,4 @@ public class sysControler {
         }
     }
 }
+

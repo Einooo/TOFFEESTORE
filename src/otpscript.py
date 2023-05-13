@@ -1,7 +1,6 @@
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-import random
 import sys
 
 def send_otp_email(sender_email, sender_password, recipient_email,Otp):
@@ -36,4 +35,4 @@ if __name__ == '__main__':
         recipient_email = sys.argv[3]
         otp = sys.argv[4]
 
-        send_otp_email(sender_email, sender_password, recipient_email,otp)
+        send_otp_email(sender_email, sender_password, recipient_email, otp)
