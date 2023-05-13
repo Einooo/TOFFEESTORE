@@ -10,6 +10,7 @@ public class Orders {
     private String orderAddress;
     private List<Item> orderItems;
     private double orderTotal;
+    private Boolean orderStatus;
 
 
     public Orders() {
