@@ -78,6 +78,13 @@ public class Carts {
         return items;
     }
 
+    public static int getTotalQuantity() {
+        int totalQuantity = 0;
+        for (Item item : items) {
+            totalQuantity += item.getQuantity();
+        }
+        return totalQuantity;
+    }
 
 
 

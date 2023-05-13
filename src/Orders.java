@@ -1,6 +1,3 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.List;
 
 public class Orders {
@@ -19,10 +16,10 @@ public class Orders {
 
     public void display_bill(){
 
-        System.out.println("your bill:");
+        System.out.println("\n\nyour bill:");
         System.out.println("--------------------------------------------------");
         System.out.println("Name is "+getCustomerName());
-        System.out.println("Order address is "+getOrderAddress());
+        System.out.println("Shipment its way to "+getOrderAddress());
         System.out.println("--------------------------------------------------");
         System.out.printf("%-20s%-15s%-15s\n", "Name", "Price", "Quantity");
         System.out.println("--------------------------------------------------");
@@ -30,9 +27,10 @@ public class Orders {
             System.out.printf("%-20s%-15s%-15s\n", item.getName(), item.getPrice(), item.getQuantity());
         }
         System.out.println("--------------------------------------------------");
-        System.out.println("Total Price->" + Carts.getTotalPrice());
+        System.out.printf("%-20s%-15s%-15s\n","Total Price&Weight " , Carts.getTotalPrice(), Carts.getTotalQuantity());
         System.out.println("--------------------------------------------------");
         System.out.println("Thank you for shopping with us!");
+        System.out.println("See you soon!\n\n");
     }
     public int getOrderId() {
         return orderId;
@@ -58,20 +56,4 @@ public class Orders {
         this.orderAddress = orderAddress;
     }
 
-
-//    public List<Item> getOrderItems() {
-//        return orderItems;
-//    }
-//
-//    public void setOrderItems(List<Item> orderItems) {
-//        this.orderItems = orderItems;
-//    }
-//
-//    public double getOrderTotal() {
-//        return orderTotal;
-//    }
-//
-//    public void setOrderTotal(double orderTotal) {
-//        this.orderTotal = orderTotal;
-//    }
 }

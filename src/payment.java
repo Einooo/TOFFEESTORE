@@ -1,7 +1,6 @@
 public class payment {
     private int paymentMethod;
 
-
     public void setPaymentMethod(int paymentMethod) {
         this.paymentMethod = paymentMethod;
     }
