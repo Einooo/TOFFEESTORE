@@ -1,3 +1,6 @@
+package orders;
+import products.*;
+
 public class payment {
     private int paymentMethod;
 

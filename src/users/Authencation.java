@@ -1,3 +1,5 @@
+package users;
+
 import java.io.*;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -128,7 +130,7 @@ public class Authencation {
             String command = "python";
             // Path to the Python script
             //                              ***** use ur own path *****
-            String scriptPath = "C:\\Users\\muhan\\IdeaProjects\\TOFFEESTORE\\src\\otpscript.py";
+            String scriptPath = "D:\\Java projects\\TOFFEESTORE\\src\\otpscript.py";
 
             // Recipient's email
             String senderEmail = "muhannadeion1@gmail.com";

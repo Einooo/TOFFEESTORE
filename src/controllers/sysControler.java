@@ -1,3 +1,8 @@
+package controllers;
+import products.*;
+import orders.*;
+import users.*;
+
 import java.util.Scanner;
 
 public class sysControler {

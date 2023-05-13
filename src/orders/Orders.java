@@ -1,3 +1,7 @@
+package orders;
+
+import  products.*;
+
 import java.util.List;
 
 public class Orders {
@@ -19,7 +23,7 @@ public class Orders {
         System.out.println("\n\nyour bill:");
         System.out.println("--------------------------------------------------");
         System.out.println("Name is "+getCustomerName());
-        System.out.println("Shipment its way to "+getOrderAddress());
+        System.out.println("Shipment on way to "+getOrderAddress());
         System.out.println("--------------------------------------------------");
         System.out.printf("%-20s%-15s%-15s\n", "Name", "Price", "Quantity");
         System.out.println("--------------------------------------------------");
