@@ -142,11 +142,15 @@ public class Authencation {
                 System.out.println("User already registered");
                 return false;
             } else {
+                File file = new File("customers.csv");
+                if (!file.exists()) {
+                    file.createNewFile();
+                }
                 // Open the customers.csv file for appending new data
                 BufferedWriter writer = new BufferedWriter(new FileWriter("customers.csv", true));
+
                 // Write the new user data to the file
-                writer.write( userName + "," + userEmail + "," + userPassword + "," + userPassword + "," + userAddress + "\n");
-                customer customer = new customer(userName, userEmail, userPassword, userPhone, userAddress, Role.CUSTOMER);
+                writer.write( userName + "," + userEmail + "," + userPassword + "," + userPhone + "," + userAddress + "\n");
                 writer.close();
                 return true;
             }
@@ -167,7 +171,7 @@ public class Authencation {
             String command = "python";
             // Path to the Python script
             //                              ***** use ur own path *****
-            String scriptPath = "D:\\Java projects\\TOFFEESTORE\\src\\otpscript.py";
+            String scriptPath = "C:\\Users\\muhan\\IdeaProjects\\TOFFEESTORE\\src\\otpscript.py";
 
             // Recipient's email
             String senderEmail = "muhannadeion1@gmail.com";
